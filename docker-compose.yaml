@@ -1,0 +1,51 @@
+version: '3.0'
+services:
+
+    client:
+        container_name: client
+        build:
+            context: ./client
+        volumes:
+           - './client:/data/app'
+        environment:
+            # map assets path with assets volume
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+            - API_URL=http://server 
+        ports:
+            - '3000:3000'
+        links:
+          - server
+        
+    server:
+      build:
+        context: ./server
+      container_name: server
+      environment:
+          - NODE_ENV=development_docker
+      volumes:
+        - ./server:/data/app
+      links:
+          - mongodb
+      ports:
+          - '8080:8080'
+      depends_on:
+          - mongodb
+     
+    mongodb:
+        hostname: mongodb
+        image: mongo:latest
+        container_name: "mongodb"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ./data:/data
+        ports:
+            - 27017:27017
+        expose:
+          - "27017"
+        command: mongod --smallfiles --logpath=/dev/null # --quiet
+
+volumes:
+    client-static:

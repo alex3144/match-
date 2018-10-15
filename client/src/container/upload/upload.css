@@ -1,0 +1,15 @@
+.label-file {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: #00b1ca;
+    padding: 20px;
+    border-radius: 30px;
+}
+.label-file:hover {
+    background-color: #25a5c4;
+}
+
+.input-file {
+    display: none;
+}
