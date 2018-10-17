@@ -1,0 +1,40 @@
+.main-table {
+    display: flex;
+    justify-content: space-around;
+    flex:1;
+    background-color: rgb(255,238,156);
+    border-radius: 20px;
+    display: flex;
+    margin-top: 20px
+}
+
+.first-table-div {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+}
+
+.number-table {
+    background: 'rgb(255, 238, 122)';
+    width: 7vw;
+    height: 7vw;
+    border-radius:50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.points-table {
+    background: 'rgb(255, 238, 122)';
+    width: 20vw;
+    height: 9vw;
+    border-radius:15%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.flex-01 {
+    flex:0.1;
+}

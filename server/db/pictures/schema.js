@@ -11,6 +11,11 @@ var picture = mongoose.Schema({
     type: Number,
     required: true
   },
+  state: {
+    type: String,
+    required: true,
+    default: 'equal'
+  },
   url: {
     type: String,
     required: true

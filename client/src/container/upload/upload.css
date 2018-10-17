@@ -13,3 +13,21 @@
 .input-file {
     display: none;
 }
+
+.button-valide {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: #00ca76;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.button-close {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: #b43120;
+    padding: 20px;
+    border-radius: 30px;
+}

@@ -45,17 +45,14 @@ class UploadMyFile extends Component {
           <form style={{padding:20}}  onSubmit={(e)=>this._handleSubmit(e)}  className="flex-justify-center">
             <label for="file" class="label-file">Choisir une image</label>
             <input id="file" class="input-file" type="file"  onChange={(e)=>this._handleImageChange(e)} />
-            {/* <input className="fileInput" 
-              type="file" 
-              onChange={(e)=>this._handleImageChange(e)} /> */}
           </form>
           <div style={{padding:20}}   className="imgPreview flex-justify-center">
             {$imagePreview}
           </div>
           {this.state.data && 
             <div style={{padding:20}}   className="flex-justify-center">
-                <div onClick={() => this.props.upload(this.state.data) }> Valider </div>
-                <div> Annuler </div>
+                <div  class="button-valide" onClick={() => this.props.upload(this.state.data) }> Valider </div>
+                <div  class="button-close" > Annuler </div>
             </div>
           }
         </div>

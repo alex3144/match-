@@ -26,8 +26,14 @@ class Upload extends Component {
     return (
       <div>
         {!loading && data !== true && <UploadMyFile upload={this.upload}/>}
-        {loading && <p>Chargement de votre photo en cour</p>}
-        {!loading && data === true && <p>Vous venez d'entrez dans le jeu, bonne chance </p>}
+        {loading && 
+           <div style={{padding:20}}   className="flex-justify-center">
+              <p>Chargement de votre photo en cour</p>
+            </div>}
+        {!loading && data === true && 
+          <div style={{padding:20}}   className="flex-justify-center">  
+            <p>Vous venez d'entrez dans le jeu, bonne chance </p>
+          </div> }
       </div>
     );
   }

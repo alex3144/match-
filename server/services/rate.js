@@ -11,11 +11,15 @@ export const rate = (params) => {
     let arr = params.values
     if(params.result._id === params.item1._id ) {
       params.item1.score = elo.newRatingIfWon(params.item1.score, params.item2.score);
+      params.item1.state = 'up'
       params.item2.score = elo.newRatingIfLost(params.item2.score, params.item1.score);
+      params.item2.state = 'down'
     }
     if(params.result._id  === params.item2._id ) {
       params.item2.score = elo.newRatingIfWon(params.item2.score, params.item1.score);
+      params.item1.state = 'down'
       params.item1.score = elo.newRatingIfLost(params.item2.score, params.item1.score);
+      params.item2.state = 'up'
     }
 
     update(params.item1)
