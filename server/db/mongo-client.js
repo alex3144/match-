@@ -6,9 +6,9 @@
 import mongoose from 'mongoose';
 
 mongoose.Promise = Promise;
-
-let db = mongoose.createConnection("mongodb://mongodb:27017")
-console.log("STATE MONGOOSE", mongoose.connection.readyState == 1);
+let url; 
+process.env.NODE_ENV === "prod" ? url = "mongodb://mongodb:27017" : url = "mongodb://mongodb:27017"; 
+const db = mongoose.createConnection(url)
 db.on('connected', function () {
   console.log('Mongoose default connection open to mongodb://mongodb:27017' );
 });
