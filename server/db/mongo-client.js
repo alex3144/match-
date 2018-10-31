@@ -6,8 +6,10 @@
 import mongoose from 'mongoose';
 
 mongoose.Promise = Promise;
-let url; 
-process.env.NODE_ENV === "prod" ? url = "mongodb://mongodb:27017" : url = "mongodb://mongodb:27017"; 
+let url = "mongodb://mongodb:27017"
+if(process.env.NODE_ENV === "development_docker") {
+  url = "mongodb://mongodb:27017"
+}
 const db = mongoose.createConnection(url)
 db.on('connected', function () {
   console.log('Mongoose default connection open to mongodb://mongodb:27017' );

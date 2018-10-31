@@ -1,4 +1,4 @@
-FROM node:8.4
+FROM node:8.9
 LABEL maintainer="Plup <plup@plup.io>"
 
 # define app folder
