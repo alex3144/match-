@@ -13,7 +13,7 @@ export function success(data) {
 export function fetchData() {
   return dispatch => {
     dispatch(loading(true));
-    return fetch('http://192.168.99.100:8080/init')      
+    return fetch('http://server:8080/init')      
     .then(response => response.json())
     .then(data => {
         dispatch(loading(false));
