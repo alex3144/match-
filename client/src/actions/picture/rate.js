@@ -17,7 +17,7 @@ export function error(error) {
   export function rate(data) {
     return dispatch => {
       dispatch(loading(true));
-      return fetch('http://server:8080/rate', 
+      return fetch('http://46.101.38.71:8080/rate', 
       {
         headers: {
           "Content-Type": "application/json"

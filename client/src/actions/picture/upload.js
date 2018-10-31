@@ -28,7 +28,7 @@ export function uploadPicture(data) {
         dispatch(loading(true));
         console.log("BEFORE CALL", data)
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://server:8080/pictures', true);
+        xhr.open('POST', 'http://46.101.38.71:8080/pictures', true);
         xhr.responseType = 'arraybuffer';
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onload = function (e) {
